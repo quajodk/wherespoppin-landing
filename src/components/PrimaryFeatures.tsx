@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useId, useRef, useState } from 'react'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
+import Image from 'next/image'
 import {
   AnimatePresence,
   type MotionProps,
@@ -16,16 +17,13 @@ import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
-import {
-  DiageoLogo,
-  LaravelLogo,
-  MirageLogo,
-  ReversableLogo,
-  StatamicLogo,
-  StaticKitLogo,
-  TransistorLogo,
-  TupleLogo,
-} from '@/components/StockLogos'
+
+import image1 from '@/images/photos/wp-img1.jpeg'
+import image2 from '@/images/photos/wp-img2.jpeg'
+import image5 from '@/images/photos/wp-img5.jpeg'
+import image6 from '@/images/photos/wp-img6.jpg'
+import image7 from '@/images/photos/wp-img7.jpg'
+import image3 from '@/images/photos/wp-img3.jpeg'
 
 const MotionAppScreenHeader = motion(AppScreen.Header)
 const MotionAppScreenBody = motion(AppScreen.Body)
@@ -41,14 +39,14 @@ const features = [
     description:
       "We handpick the trendiest venues, so you're always in the know.",
     icon: DeviceUserIcon,
-    screen: InviteScreen,
+    screen: StocksScreen,
   },
   {
     name: 'Live Event Updates',
     description:
       'Stay informed about the hottest parties, concerts, and happenings. Unlock special offers and VIP access with our in-app rewards.',
     icon: DeviceNotificationIcon,
-    screen: StocksScreen,
+    screen: InviteScreen,
   },
   {
     name: 'Nightlife Guides',
@@ -194,32 +192,15 @@ function InviteScreen(props: ScreenProps) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Invite people</AppScreen.Title>
-        <AppScreen.Subtitle>
-          Get tips <span className="text-white">5s sooner</span> for every
-          invite.
-        </AppScreen.Subtitle>
+        <AppScreen.Title>Live Events</AppScreen.Title>
       </MotionAppScreenHeader>
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <div className="px-4 py-6">
-          <div className="space-y-6">
-            {[
-              { label: 'Full name', value: 'Albert H. Wiggin' },
-              { label: 'Email address', value: 'awiggin@chase.com' },
-            ].map((field) => (
-              <div key={field.label}>
-                <div className="text-sm text-gray-500">{field.label}</div>
-                <div className="mt-2 border-b border-gray-200 pb-2 text-sm text-gray-900">
-                  {field.value}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-            Invite person
-          </div>
+        <div className="overflow-hidden rounded-t-2xl">
+          <video className="h-full object-cover" autoPlay loop muted>
+            <source src="https://video.twimg.com/ext_tw_video/1699853924964962304/pu/vid/avc1/480x852/Bu5HT0BTFk3BkiZJ.mp4?tag=12" />
+          </video>
         </div>
       </MotionAppScreenBody>
     </AppScreen>
@@ -230,7 +211,7 @@ function StocksScreen(props: ScreenProps) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Stocks</AppScreen.Title>
+        <AppScreen.Title>Hotspots 🔥</AppScreen.Title>
         <AppScreen.Subtitle>March 9, 2022</AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody
@@ -239,68 +220,44 @@ function StocksScreen(props: ScreenProps) {
         <div className="divide-y divide-gray-100">
           {[
             {
-              name: 'Laravel',
-              price: '4,098.01',
-              change: '+4.98%',
-              color: '#F9322C',
-              logo: LaravelLogo,
+              name: 'Alley Bar',
+              price: '40M',
+              logo: 'https://pbs.twimg.com/profile_images/1246532584844247043/vBwZDpCm_400x400.jpg',
             },
             {
-              name: 'Tuple',
-              price: '5,451.10',
-              change: '-3.38%',
-              color: '#5A67D8',
-              logo: TupleLogo,
+              name: 'Bloom Bar',
+              price: '5M',
+              logo: 'https://pbs.twimg.com/profile_images/1631036800633372674/7P_CImNE_400x400.jpg',
             },
             {
-              name: 'Transistor',
-              price: '4,098.41',
-              change: '+6.25%',
-              color: '#2A5B94',
-              logo: TransistorLogo,
+              name: 'Xhale',
+              price: '4M',
+              logo: 'https://exhaleloungeghana.com/images/Exhalelogowhite-p-500.png',
             },
             {
-              name: 'Diageo',
-              price: '250.65',
-              change: '+1.25%',
-              color: '#3320A7',
-              logo: DiageoLogo,
+              name: 'Mood Bar',
+              price: '256.5k',
+              logo: 'https://viewghana.com/wp-content/uploads/2022/04/Mood_bar_logo.jpg',
             },
             {
-              name: 'StaticKit',
-              price: '250.65',
-              change: '-3.38%',
-              color: '#2A3034',
-              logo: StaticKitLogo,
-            },
-            {
-              name: 'Statamic',
-              price: '5,040.85',
-              change: '-3.11%',
-              color: '#0EA5E9',
-              logo: StatamicLogo,
-            },
-            {
-              name: 'Mirage',
-              price: '140.44',
-              change: '+9.09%',
-              color: '#16A34A',
-              logo: MirageLogo,
-            },
-            {
-              name: 'Reversable',
-              price: '550.60',
-              change: '-1.25%',
-              color: '#8D8D8D',
-              logo: ReversableLogo,
+              name: 'Sky Bar',
+              price: '250k',
+
+              logo: 'https://images.squarespace-cdn.com/content/v1/57a491e5cd0f687001710147/1470585271145-O4TMX5QKVU8YWBFI316A/SkyBar_black.jpg?format=1500w',
             },
           ].map((stock) => (
             <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
               <div
-                className="flex-none rounded-full"
-                style={{ backgroundColor: stock.color }}
+                className="flex-none overflow-hidden rounded-full"
+                style={{ backgroundColor: 'black' }}
               >
-                <stock.logo className="h-10 w-10" />
+                <Image
+                  src={stock.logo}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="flex-auto text-sm text-gray-900">
                 {stock.name}
@@ -308,16 +265,6 @@ function StocksScreen(props: ScreenProps) {
               <div className="flex-none text-right">
                 <div className="text-sm font-medium text-gray-900">
                   {stock.price}
-                </div>
-                <div
-                  className={clsx(
-                    'text-xs leading-5',
-                    stock.change.startsWith('+')
-                      ? 'text-cyan-500'
-                      : 'text-gray-500',
-                  )}
-                >
-                  {stock.change}
                 </div>
               </div>
             </div>
@@ -332,51 +279,29 @@ function InvestScreen(props: ScreenProps) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(props.animated ? headerAnimation : {})}>
-        <AppScreen.Title>Buy $LA</AppScreen.Title>
+        <AppScreen.Title>Explore</AppScreen.Title>
         <AppScreen.Subtitle>
-          <span className="text-white">$34.28</span> per share
+          <span className="text-white">
+            Get to know where&apos;s Poppin&apos;
+          </span>
         </AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <div className="px-4 py-6">
-          <div className="space-y-4">
-            {[
-              { label: 'Number of shares', value: '100' },
-              {
-                label: 'Current market price',
-                value: (
-                  <div className="flex">
-                    $34.28
-                    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
-                      <path
-                        d="M17 15V7H9M17 7 7 17"
-                        stroke="#06B6D4"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                ),
-              },
-              { label: 'Estimated cost', value: '$3,428.00' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex justify-between border-b border-gray-100 pb-4"
-              >
-                <div className="text-sm text-gray-500">{item.label}</div>
-                <div className="text-sm font-semibold text-gray-900">
-                  {item.value}
-                </div>
+        <div className="grid grid-cols-2 gap-0">
+          {[image1, image3, image2, image5, image7, image6].map(
+            (image, imageIndex) => (
+              <div className="h-44 w-64" key={imageIndex}>
+                <Image
+                  src={image}
+                  alt=""
+                  // sizes="(min-width: 640px) 18rem, 11rem"
+                  className="h-full w-full object-cover"
+                />
               </div>
-            ))}
-            <div className="rounded-lg bg-cyan-500 px-3 py-2 text-center text-sm font-semibold text-white">
-              Buy shares
-            </div>
-          </div>
+            ),
+          )}
         </div>
       </MotionAppScreenBody>
     </AppScreen>

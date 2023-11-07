@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import wpLogo from '@/images/logo-wp.png'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -27,15 +28,16 @@ export function Footer() {
         <div className="flex flex-col items-start justify-between gap-y-12 pb-6 pt-16 lg:flex-row lg:items-center lg:py-16">
           <div>
             <div className="flex items-center text-gray-900">
-              <Logomark className="h-10 w-10 flex-none fill-cyan-500" />
+              <Logomark className="h-10 w-10 flex-none rounded-md" />
               <div className="ml-4">
-                <p className="text-base font-semibold">Pocket</p>
-                <p className="mt-1 text-sm">Invest at the perfect time.</p>
+                <div className="h-4 w-40">
+                  <Image src={wpLogo} alt="logo-wp" className="h-full w-full" />
+                </div>
+                <p className="mt-1 text-sm">
+                  Your Passport to Endless Excitement.
+                </p>
               </div>
             </div>
-            <nav className="mt-11 flex gap-8">
-              <NavLinks />
-            </nav>
           </div>
           <div className="group relative -mx-4 flex items-center self-stretch p-4 transition-colors hover:bg-gray-100 sm:self-auto sm:rounded-2xl lg:mx-0 lg:self-auto lg:p-6">
             <div className="relative flex h-24 w-24 flex-none items-center justify-center">
