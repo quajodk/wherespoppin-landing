@@ -30,12 +30,7 @@ export function Footer() {
             <div className="flex items-center text-gray-900">
               <Logomark className="h-10 w-10 flex-none rounded-md" />
               <div className="ml-4">
-                <div className="h-4 w-40">
-                  <Image src={wpLogo} alt="logo-wp" className="h-full w-full" />
-                </div>
-                <p className="mt-1 text-sm">
-                  Your Passport to Endless Excitement.
-                </p>
+                <p className="mt-1 text-sm">Never miss where the fun is.</p>
               </div>
             </div>
           </div>

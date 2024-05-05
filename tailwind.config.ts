@@ -36,9 +36,9 @@ export default {
         '5xl': '2.5rem',
       },
       colors: ({ colors }) => ({
-        gray: colors.neutral,
-        accent: '#fffc00',
-        primary: '#d85288',
+        gray: colors.gray,
+        accent: '#ff3333',
+        primary: '#000000',
       }),
       fontFamily: {
         sans: 'var(--font-inter)',

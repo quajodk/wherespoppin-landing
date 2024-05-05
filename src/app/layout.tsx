@@ -12,8 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - WherePoppin',
-    default: 'WheresPoppin - Your Passport to Endless Excitement!',
+    template: '%s - WheresPoppin',
+    default: 'WheresPoppin - Never miss where the fun is!',
   },
   description:
     "Unleash the Night: Your Passport to Endless Excitement! Welcome to the city's best-kept secret, your gateway to unforgettable nights!",
