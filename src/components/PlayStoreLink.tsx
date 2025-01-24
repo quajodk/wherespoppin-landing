@@ -8,7 +8,7 @@ export function PlayStoreLink({
 }) {
   return (
     <Link
-      href="#"
+      href="https://play.google.com/store/apps/details?id=app.wherespoppin.twa&hl=en"
       aria-label="Download on the Play Store"
       className={clsx(
         'rounded-lg transition-colors',
